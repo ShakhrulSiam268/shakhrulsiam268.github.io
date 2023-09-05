@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Kai Zhang's Website"
+title                    : "Shakhrul Siam's website"
 title_separator          : "-"
-name                     : &name "Kai Zhang"
+name                     : &name "Shakhrul Iman Siam"
 description              : &description "personal description"
-url                      : https://drogozhang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://shakhrulsiam.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "drogozhang/drogozhang.github.io"
+repository               : "ShakhrulSiam268/shakhrulsiam.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Kai Zhang"
+  name             : "Md Shakhrul Iman Siam"
   avatar           : "profile_1.png"
   bio              : "Stay Hungry, Stay Foolish"
   location         : "Columbus, OH"
