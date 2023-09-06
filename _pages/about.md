@@ -26,8 +26,8 @@ I am broadly interested in Computer Vision and AIoT systems.
 
 ## Contact
 
-**Email**: `[LAST_NAME].13253@osu.edu` OR `drogo[LAST_NAME]@gmail.com`
+**Email**: `[LAST_NAME].5@osu.edu` 
 
 Feel free to contact me if you are interested in my research or want to discuss relevant research topic or potential collaborations :)
 
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=312&t=tt&d=WWgOfq4agmQMsv-liNWF_IqrTiXrb-1nqoPvyzlC238'></script>
+<script type='text/javascript' id='clustrmaps' src='//www.clustrmaps.com/map_v2.png?d=bmP-1vZH8X4tAnhN7bhnvD8qcfyyZ8gVXWtJZJjzeGk&cl=ffffff'></script>
