@@ -13,7 +13,7 @@ name                     : &name "Shakhrul Iman Siam"
 description              : &description "personal description"
 url                      : https://shakhrulsiam.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "ShakhrulSiam268/shakhrulsiam.github.io"
+repository               : "shakhrulsiam.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
