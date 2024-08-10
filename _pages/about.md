@@ -20,7 +20,8 @@ Before starting my PhD, I worked for 2.5 years in Industry as a Machine Learning
 
 
 ## News 
-
+- **[08/2024]** Our Paper "Artificial Intelligence of Things" has been accepted to TOSN.
+- **[05/2024]** "ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT" has been accepted to Mobisys 24. 
 
 
 ## Selected Publications
