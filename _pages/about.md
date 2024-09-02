@@ -8,15 +8,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I  am Md. Shakhrul Iman Siam.  First-year Ph.D. Student, Department of Computer Science and Engineering at The Ohio State University (OSU). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of Prof. Mi Zhang. 
+I  am Md. Shakhrul Iman Siam.  Second-year Ph.D. Student, Department of Computer Science and Engineering at The Ohio State University (OSU). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of Prof. Mi Zhang. 
 
 I completed my undergraduate studies in Electrical and Electronic Engineering (EEE) from Bangladesh University of Engineering and Technology (BUET).
 
 Before starting my PhD, I worked for 2.5 years in Industry as a Machine Learning Engineer. I built various computer vision solutions that have very high business Impact. Currently, I am working on the design and implementation of the Efficient Large Language Model. 
 
-<!-- Previously, I worked with Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/) at Tsinghua University, Prof. [Soroush Vosoughi](https://www.cs.dartmouth.edu/~soroush/) at Dartmouth College, and Dr. [Daxin Jiang](https://scholar.google.com/citations?user=N-wAHCoAAAAJ&hl=zh-CN) at Microsoft.-->
-
-<!-- Here is my [CV](/files/cv_open.pdf) (updated in Jan 2023).-->
 
 
 ## News 
