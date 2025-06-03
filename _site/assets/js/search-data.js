@@ -52,10 +52,7 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "news-i-ve-started-my-ph-d-in-cse-at-the-ohio-state-university",
-          title: 'I’ve started my Ph.D. in CSE at The Ohio State University.',
-          description: "",
-          section: "News",},{id: "news-our-paper-titled-chirptransformer-versatile-lora-encoding-for-low-power-wide-area-iot-has-been-accepted-in-mobisys-24",
+      },{id: "news-our-paper-titled-chirptransformer-versatile-lora-encoding-for-low-power-wide-area-iot-has-been-accepted-in-mobisys-24",
           title: 'Our Paper titled “ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT” has been...',
           description: "",
           section: "News",},{id: "news-our-paper-titled-artificial-intelligence-of-things-a-survey-has-been-published-in-acm-transactions-on-sensor-networks-acm-tosn",
