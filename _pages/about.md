@@ -1,34 +1,34 @@
 ---
+layout: about
+title: about
 permalink: /
-layout: archive
-title: "About me"
-excerpt: "About me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
----
-I  am Md. Shakhrul Iman Siam.  Second-year Ph.D. Student, Department of Computer Science and Engineering at The Ohio State University (OSU). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of Prof. Mi Zhang. 
+subtitle: <a href='https://aiot-mlsys-lab.github.io/'>OSU AIoT and Machine Learning Systems Lab</a>. PhD Student.
 
-I completed my undergraduate studies in Electrical and Electronic Engineering (EEE) from Bangladesh University of Engineering and Technology (BUET).
+profile:
+  align: right
+  image: prof_pic_siam.jpg
+  image_circular: false # crops the image to make it circular
+  # more_info: >
+  #   <p>555 your office number</p>
+  #   <p>123 your address street</p>
+  #   <p>Your City, State 12345</p>
+
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
+
+announcements:
+  enabled: true # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: false
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
+---
+
+I  am Md. Shakhrul Iman Siam.  Second-year Ph.D. Student, Department of Computer Science and Engineering at [The Ohio State University (OSU)](https://cse.osu.edu/). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of [Prof. Mi Zhang](https://mi-zhang.github.io/). 
+
+I completed my undergraduate studies in Electrical and Electronic Engineering (EEE) from [Bangladesh University of Engineering and Technology (BUET)](https://eee.buet.ac.bd/).
 
 Before starting my PhD, I worked for 2.5 years in Industry as a Machine Learning Engineer. I built various computer vision solutions that have very high business Impact. Currently, I am working on the design and implementation of the Efficient Large Language Model. 
-
-
-
-## News 
-- **[08/2024]** Our Paper "Artificial Intelligence of Things" has been accepted to TOSN.
-- **[05/2024]** "ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT" has been accepted to Mobisys 24. 
-
-
-## Selected Publications
-
-
-
-## Contact
-
-**Email**: `[LAST_NAME].5@osu.edu` 
-
-Feel free to contact me if you are interested in my research or want to discuss relevant research topic or potential collaborations :)
-
-<script type='text/javascript' id='clustrmaps' src='//www.clustrmaps.com/map_v2.png?d=bmP-1vZH8X4tAnhN7bhnvD8qcfyyZ8gVXWtJZJjzeGk&cl=ffffff'></script>
