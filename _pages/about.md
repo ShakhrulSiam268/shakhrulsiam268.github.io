@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I  am Md. Shakhrul Iman Siam.  Second-year Ph.D. Student, Department of Computer Science and Engineering at [The Ohio State University (OSU)](https://cse.osu.edu/). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of [Prof. Mi Zhang](https://mi-zhang.github.io/). 
+I  am Md. Shakhrul Iman Siam.  Third-year Ph.D. Student, Department of Computer Science and Engineering at [The Ohio State University (OSU)](https://cse.osu.edu/). I am currently working as a Graduate Research Associate at OSU AIoT and Machine Learning Systems Lab under the supervision of [Prof. Mi Zhang](https://mi-zhang.github.io/). 
 
 I completed my undergraduate studies in Electrical and Electronic Engineering (EEE) from [Bangladesh University of Engineering and Technology (BUET)](https://eee.buet.ac.bd/).
 
