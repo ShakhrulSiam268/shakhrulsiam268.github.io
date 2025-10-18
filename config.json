@@ -1,5 +1,6 @@
 {
-  "profilePictureSize": 196,
+  "profilePictureSize": 250,
+  "aboutBackgroundImage": null,
   "publicationThumbnailWidth": "20%",
   "sectionSpacingY": "5rem",
   "fontSizes": {
