@@ -1,5 +1,11 @@
 [
   {
+    "date": "Apr 2026",
+    "title": "Our work on 'RespiraMFM' has been accepted at ACL 2026 Main Conference.",
+    "description": "Our work on 'RespiraMFM' has been accepted at ACL 2026 (Main).",
+    "link": "#"
+  },
+  {
     "date": "Sep 2025",
     "title": "Our work on 'Reading Recognition in the Wild' has been accepted at NeurIPS 2025.",
     "description": "Our work on 'Reading Recognition in the Wild' has been accepted at NeurIPS 2025.",
@@ -14,12 +20,6 @@
   {
     "date": "Aug 2024",
     "title": "Our Paper titled “Artificial Intelligence of Things: A Survey” has been published in ACM Transactions on Sensor Networks",
-    "description": "",
-    "link": "#"
-  },
-  {
-    "date": "Jun 2024",
-    "title": "Our Paper titled “ChirpTransformer: Versatile LoRa Encoding for Low-power Wide-area IoT” has been accepted in Mobisys 24.",
     "description": "",
     "link": "#"
   },

@@ -1,5 +1,16 @@
 [
   {
+    "status": "ACL 2026",
+    "status_colors": "bg-red-200 text-red-800",
+    "year": "2026",
+    "title": "RespiraMFM: A Multimodal Foundation Model with Contrastive Audio-Language Alignment for Respiratory Disease Identification",
+    "authors": "Shakhrul Iman Siam, Tiantian Feng, Jiankun Zhang, Shrikanth Narayan, Mi Zhang",
+    "conference": "Association for Computational Linguistics (ACL)",
+    "thumbnail": "media/respira.png",
+    "description": "Respiratory diseases remain a leading cause of global mortality, where timely and accurate diagnosis is critical to improving patient outcomes and reducing healthcare burdens. While prior work has explored audio-based models for respiratory disease detection, such unimodal approaches often suffer from limited generalizability and diagnostic precision. In this paper, we propose RespiraMFM, a Multimodal Foundation Model that integrates respiratory sounds with patient medical history and symptoms to enhance diagnostic accuracy and disease detection capabilities. We introduce an effective contrastive alignment strategy for audio-text multimodal integration, allowing the model to learn better cross-modal representations between respiratory sounds and corresponding textual clinical information. We evaluate RespiraMFM across five major respiratory diseases using seven real-world datasets in both supervised fine-tuning and zero-shot settings, achieving a 9.72% improvement in AUROC on supervised tasks and a 20.36% gain on zero-shot tasks over existing baselines. These findings underscore the potential of our framework to advance early diagnosis and improve clinical decision-making in respiratory disease management.",
+    "tags": ["Multimodal LLM", "Health AI", "Audio"]
+  },
+  {
     "status": "NeurIPS 2025",
     "status_colors": "bg-purple-200 text-purple-800",
     "year": "2025",
@@ -15,7 +26,7 @@
   },
   {
     "status": "MobiSys 2024",
-    "status_colors": "bg-red-100 text-red-800",
+    "status_colors": "bg-green-100 text-green-800",
     "year": "2024",
     "title": "ChirpTransformer: Versatile LoRa encoding for low-power wide-area IoT",
     "authors": "Chenning Li, Yidong Ren, Shuai Tong, Shakhrul Iman Siam, Mi Zhang, Jiliang Wang, Yunhao Liu, and Zhichao Cao",
