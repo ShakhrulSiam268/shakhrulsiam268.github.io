@@ -11,6 +11,17 @@
     "tags": ["Multimodal LLM", "Health AI", "Audio"]
   },
   {
+    "status": "Mobisys 2026",
+    "status_colors": "bg-green-100 text-green-800",
+    "year": "2026",
+    "title": "Augmented Reality Glasses Powered by Super Memory",
+    "authors": "Samiul Alam, Shakhrul Iman Siam, Mi Zhang",
+    "conference": "The 24th ACM International Conference on Mobile Systems, Applications, and Services (ACM MobiSys 2026)",
+    "thumbnail": "media/memolens.png",
+    "description": "",
+    "tags": ["Computer Vision", "Egocentric AI", "Meta Aria Glass"]
+  },
+  {
     "status": "NeurIPS 2025",
     "status_colors": "bg-purple-200 text-purple-800",
     "year": "2025",
@@ -30,7 +41,7 @@
     "year": "2024",
     "title": "ChirpTransformer: Versatile LoRa encoding for low-power wide-area IoT",
     "authors": "Chenning Li, Yidong Ren, Shuai Tong, Shakhrul Iman Siam, Mi Zhang, Jiliang Wang, Yunhao Liu, and Zhichao Cao",
-    "conference": "In Proceedings of the 22nd Annual International Conference on Mobile Systems, Applications and Services (MobiSys)",
+    "conference": "The 22th ACM International Conference on Mobile Systems, Applications, and Services (ACM MobiSys 2024)",
     "thumbnail": "media/paper_chirp.png",
     "description": "This paper introduces ChirpTransformer, a versatile LoRa encoding framework that harnesses broad chirp features to dynamically modulate data, enhancing network coverage, throughput, and energy efficiency. Unlike the standard LoRa encoder that offers only single configurable chirp feature, our framework introduces four distinct chirp features, expanding the spectrum of methods available for data modulation. To implement these features on commercial off-the-shelf (COTS) LoRa nodes, we utilize a combination of a software design and a hardware interrupt. ChirpTransformer serves as the foundation for optimizing encoding and decoding in three specific case studies: weak signal decoding for extended network coverage, concurrent transmission for heightened network throughput, and data rate adaptation for improved network energy efficiency.",
     "tags": ["Wireless Communication", "AIoT"],
