@@ -62,6 +62,10 @@
         #scroll-to-top:hover {
             transform: scale(1.1);
         }
+        .about-dots {
+            background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -103,33 +107,56 @@
         </div>
     </header>
 
-    <!-- About Section is now full-width --><section id="about" class="blended-background text-center min-h-screen flex flex-col justify-center items-center">
-        <div class="relative z-10 flex flex-col justify-center items-center px-4">
-            <img id="profile-picture" src="" alt="Profile Picture" class="rounded-full mb-6 ring-4 ring-gray-200 shadow-lg">
-            <h1 id="about-name" class="text-5xl md:text-7xl font-bold text-gray-900"></h1>
-            <p id="about-title" class="text-xl md:text-2xl text-gray-600 mt-2"></p>
-            <div id="about-skills" class="flex flex-wrap justify-center gap-3 mt-6"></div>
-            <div class="mt-8 max-w-2xl mx-auto bg-white/70 backdrop-blur-sm p-8 border border-gray-200 rounded-2xl shadow-lg">
-                <p id="about-bio" class="text-lg text-gray-700 leading-relaxed"></p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 text-gray-600">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        <span id="about-location"></span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                         <i data-lucide="mail" class="w-4 h-4"></i>
-                        <a id="about-email" href="" class="hover:text-blue-600"></a>
-                    </div>
+    <!-- About Section --><section id="about" class="blended-background relative overflow-hidden py-20 flex flex-col justify-center">
+        <!-- Decorative background blobs -->
+        <div class="absolute top-0 left-0 w-80 h-80 bg-blue-200 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-40 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-200 rounded-full translate-x-1/3 translate-y-1/3 opacity-40 blur-3xl pointer-events-none"></div>
+        <!-- Dot pattern (top-right corner) -->
+        <div class="about-dots absolute top-0 right-0 w-72 h-72 opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10 container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-center gap-10 max-w-5xl mx-auto">
+
+                <!-- Left: Photo -->
+                <div class="flex-shrink-0 relative group">
+                    <!-- Gradient glow behind photo -->
+                    <div class="absolute -inset-2 bg-gradient-to-br from-blue-400 via-blue-300 to-indigo-400 rounded-2xl opacity-25 blur-lg group-hover:opacity-40 transition-opacity duration-500"></div>
+                    <img id="profile-picture" src="" alt="Profile Picture" class="relative rounded-2xl shadow-2xl object-cover ring-4 ring-white">
                 </div>
-                 <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                    <a id="about-cv" href="#" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        View CV
-                    </a>
-                    <a href="#contact" class="bg-white text-gray-800 font-semibold px-6 py-3 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Contact Me
-                    </a>
+
+                <!-- Right: Content -->
+                <div class="flex-1 text-center md:text-left">
+                    <p class="text-blue-600 font-semibold text-xs uppercase tracking-widest mb-2">Research Portfolio</p>
+                    <h1 id="about-name" class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"></h1>
+                    <p id="about-title" class="text-base text-gray-500 font-medium mt-1.5"></p>
+                    <!-- Accent divider -->
+                    <div class="flex items-center gap-2 mt-4 mb-4 justify-center md:justify-start">
+                        <div class="h-1 w-10 bg-blue-500 rounded-full"></div>
+                        <div class="h-1 w-4 bg-indigo-400 rounded-full"></div>
+                        <div class="h-1 w-2 bg-blue-300 rounded-full"></div>
+                    </div>
+                    <p id="about-bio" class="text-gray-600 leading-relaxed text-[0.95rem]"></p>
+                    <div id="about-skills" class="flex flex-wrap justify-center md:justify-start gap-2 mt-4"></div>
+                    <!-- Location & email -->
+                    <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-1.5 mt-4 text-sm text-gray-500">
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>
+                            <span id="about-location"></span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="mail" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>
+                            <a id="about-email" href="" class="hover:text-blue-600 transition-colors"></a>
+                        </div>
+                    </div>
+                    <!-- CTA buttons -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-5">
+                        <a id="about-cv" href="#" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center gap-2 text-sm">
+                            <i data-lucide="download" class="w-4 h-4"></i> View CV
+                        </a>
+                        <a href="#contact" class="bg-white text-gray-800 font-semibold px-5 py-2.5 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 flex items-center gap-2 text-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i> Contact Me
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,8 +164,8 @@
 
     <!-- Main content container with padding --><main class="container mx-auto px-6">
 
-        <!-- News Section --><section id="news" class="bg-gray-100/50 rounded-2xl -mt-12 fade-in-section">
-            <div class="text-center mb-10">
+        <!-- News Section --><section id="news" class="bg-gray-100/50 rounded-2xl fade-in-section">
+            <div class="text-center mb-6">
                 <h2 class="text-4xl font-bold text-gray-900">News & Updates</h2>
                 <p class="text-lg text-gray-600 mt-2">Latest announcements and achievements</p>
             </div>
@@ -146,43 +173,43 @@
         </section>
 
         <!-- Research Interest Section --><section id="research" class="fade-in-section">
-            <div class="text-center mb-12">
+            <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold text-gray-900">Research Interests</h2>
                 <p class="text-lg text-gray-600 mt-2">My primary areas of focus and exploration</p>
             </div>
-            <!-- Research content will be injected here --><div id="research-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"></div>
+            <!-- Research content will be injected here --><div id="research-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"></div>
         </section>
 
         <!-- Education Section --><section id="education" class="bg-gray-100/50 rounded-2xl fade-in-section">
-            <div class="text-center mb-12">
+            <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold text-gray-900">Education</h2>
                 <p class="text-lg text-gray-600 mt-2">Academic background and achievements</p>
             </div>
-            <!-- Education content will be injected here --><div id="education-container" class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"></div>
+            <!-- Education content will be injected here --><div id="education-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
         </section>
 
         <!-- Work Experience Section --><section id="experience" class="fade-in-section">
-            <div class="text-center mb-12">
+            <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold text-gray-900">Work Experience</h2>
                 <p class="text-lg text-gray-600 mt-2">Professional experience in research and industry</p>
             </div>
-            <!-- Experience content will be injected here --><div id="experience-container" class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"></div>
+            <!-- Experience content will be injected here --><div id="experience-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
         </section>
 
         <!-- Publications Section --><section id="publications" class="bg-gray-100/50 rounded-2xl fade-in-section">
-             <div class="text-center mb-12">
+             <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold text-gray-900">Publications</h2>
                 <p class="text-lg text-gray-600 mt-2">Recent research contributions in machine learning, computer vision, and AI applications</p>
             </div>
-            <!-- Publications content will be injected here --><div id="publications-container" class="space-y-8 max-w-5xl mx-auto"></div>
+            <!-- Publications content will be injected here --><div id="publications-container" class="space-y-5 max-w-5xl mx-auto"></div>
         </section>
         
         <!-- Projects Section --><section id="projects" class="fade-in-section">
-            <div class="text-center mb-12">
+            <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold text-gray-900">Projects</h2>
                 <p class="text-lg text-gray-600 mt-2">A selection of my featured work</p>
             </div>
-            <!-- Projects content will be injected here --><div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"></div>
+            <!-- Projects content will be injected here --><div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto"></div>
         </section>
 
         <!-- Contact Section --><section id="contact" class="bg-gray-100/50 rounded-2xl fade-in-section">
@@ -364,7 +391,7 @@
                         // Render Research Interests
                         document.getElementById('research-container').innerHTML = researchData.map(item => `
                             <div class="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
-                                <img src="${item.image}" alt="${item.name}" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 p-6">
                                     <h3 class="text-2xl font-bold text-white">${item.name}</h3>
@@ -374,8 +401,8 @@
                         `).join('');
 
                         document.getElementById('education-container').innerHTML = educationData.map(edu => `
-                            <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all flex flex-col">
-                                <div class="flex justify-between items-start mb-4">
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all flex flex-col">
+                                <div class="flex justify-between items-start mb-3">
                                     <img src="${edu.logo}" alt="${edu.institution} Logo" class="w-12 h-12 rounded-lg">
                                     <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Education</span>
                                 </div>
@@ -389,14 +416,14 @@
                                     <ul class="mt-4 space-y-2 text-gray-600 list-disc list-inside text-sm">${edu.details.map(detail => `<li>${detail}</li>`).join('')}</ul>
                                 </div>
                                 <div class="mt-auto pt-4">
-                                    <p class="text-xs font-semibold text-gray-500 uppercase mt-4 mb-2">Key Courses</p>
+                                    <p class="text-xs font-semibold text-gray-500 uppercase mt-3 mb-1">Key Courses</p>
                                     <div class="flex flex-wrap gap-2">${edu.courses.map(course => `<span class="${edu.course_colors} text-xs font-medium px-2.5 py-1 rounded-full">${course}</span>`).join('')}</div>
                                 </div>
                             </div>`).join('');
 
                         document.getElementById('experience-container').innerHTML = experienceData.map(exp => `
                             <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all">
-                                <div class="flex justify-between items-start mb-4">
+                                <div class="flex justify-between items-start mb-3">
                                     <img src="${exp.logo}" alt="${exp.company} Logo" class="w-12 h-12 rounded-lg">
                                     <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Work</span>
                                 </div>
@@ -407,20 +434,28 @@
                                     <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i><span>${exp.location}</span></div>
                                 </div>
                                 <ul class="mt-4 space-y-2 text-gray-600 list-disc list-inside text-sm">${exp.details.map(detail => `<li>${detail}</li>`).join('')}</ul>
-                                <div class="flex flex-wrap gap-2 mt-6">${exp.skills.map(skill => `<span class="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">${skill}</span>`).join('')}</div>
+                                <div class="flex flex-wrap gap-2 mt-4">${exp.skills.map(skill => `<span class="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">${skill}</span>`).join('')}</div>
                             </div>`).join('');
 
                         document.getElementById('publications-container').innerHTML = publicationsData.map((pub, index) => `
-                            <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
-                                <div class="md:flex gap-8 items-center">
-                                    <div class="w-full md:w-auto flex-shrink-0 mb-6 md:mb-0" style="flex-basis: ${config.publicationThumbnailWidth};"><img src="${pub.thumbnail}" alt="Publication thumbnail" class="w-full h-auto rounded-lg"></div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-center mb-2"><span class="text-xs font-medium ${pub.status_colors} px-3 py-1 rounded-full">${pub.status}</span><span class="text-xs text-gray-500 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> ${pub.year}</span></div>
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+                                <div class="md:flex gap-6 items-stretch">
+                                    <!-- Thumbnail: badge above, image fills remaining height -->
+                                    <div class="w-full md:w-auto flex-shrink-0 mb-4 md:mb-0 flex flex-col" style="flex-basis: ${config.publicationThumbnailWidth};">
+                                        <div class="flex justify-center mb-1.5"><span class="text-xs font-semibold ${pub.status_colors} px-3 py-1 rounded-full">${pub.status}</span></div>
+                                        <img src="${pub.thumbnail}" alt="Publication thumbnail" class="w-full flex-1 object-cover rounded-lg block min-h-0">
+                                    </div>
+                                    <!-- Text content -->
+                                    <div class="flex-1 flex flex-col">
+                                        <!-- Tags + year on same row, aligned with badge -->
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex flex-wrap gap-2">${pub.tags.map(tag => `<span class="bg-gray-200 text-gray-800 font-medium px-3 py-1 rounded-full" style="font-size: ${config.fontSizes.publicationTags};">${tag}</span>`).join('')}</div>
+                                            <span class="text-xs text-gray-500 flex items-center gap-1.5 flex-shrink-0 ml-3"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${pub.year}</span>
+                                        </div>
                                         <h3 class="font-bold text-gray-900 leading-tight" style="font-size: ${config.fontSizes.publicationTitle};">${pub.title}</h3>
-                                        <p class="text-gray-600 mt-2" style="font-size: ${config.fontSizes.publicationMeta};">${pub.authors}</p>
+                                        <p class="text-gray-600 mt-1.5" style="font-size: ${config.fontSizes.publicationMeta};">${pub.authors}</p>
                                         <p class="text-gray-500 italic" style="font-size: ${config.fontSizes.publicationMeta};">${pub.conference}</p>
-                                        <div class="flex flex-wrap gap-2 mt-4">${pub.tags.map(tag => `<span class="bg-gray-200 text-gray-800 font-medium px-3 py-1 rounded-full" style="font-size: ${config.fontSizes.publicationTags};">${tag}</span>`).join('')}</div>
-                                        <div class="flex flex-wrap gap-4 mt-6">
+                                        <div class="flex flex-wrap gap-3 mt-2">
                                             ${pub.paper_link ? `<a href="${pub.paper_link}" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center justify-center gap-2" style="font-size: ${config.fontSizes.publicationButtons};"><i data-lucide="book-open" class="w-4 h-4"></i> Read Paper</a>` : `<a class="bg-gray-200 text-gray-600 font-semibold px-4 py-2 rounded-lg flex items-center justify-center gap-2 cursor-not-allowed" style="font-size: ${config.fontSizes.publicationButtons};"><i data-lucide="book-open" class="w-4 h-4"></i> Read Paper</a>`}
                                             <button data-abstract-target="abstract-${index}" class="toggle-abstract-button bg-white text-gray-800 font-semibold px-4 py-2 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 flex items-center justify-center gap-2" style="font-size: ${config.fontSizes.publicationButtons};"><i data-lucide="file-text" class="w-4 h-4"></i> <span>Abstract</span></button>
                                             ${pub.project_link ? `<a href="${pub.project_link}" class="bg-white text-gray-800 font-semibold px-4 py-2 rounded-lg shadow-md border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 flex items-center justify-center gap-2" style="font-size: ${config.fontSizes.publicationButtons};"><i data-lucide="monitor-smartphone" class="w-4 h-4"></i> Project Page</a>` : ''}
@@ -428,7 +463,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="abstract-${index}" class="hidden mt-6 pt-6 border-t border-gray-200">
+                                <div id="abstract-${index}" class="hidden mt-4 pt-4 border-t border-gray-200">
                                     <h4 class="font-bold text-gray-800 mb-2" style="font-size: ${config.fontSizes.abstractTitle};">Abstract</h4>
                                     <p class="text-gray-700 leading-relaxed" style="font-size: ${config.fontSizes.abstractBody};">${pub.description}</p>
                                 </div>
@@ -437,13 +472,13 @@
                         // Render Projects
                         document.getElementById('projects-container').innerHTML = projectsData.map(proj => `
                             <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all flex flex-col">
-                                <img src="${proj.image}" alt="${proj.name} thumbnail" class="w-full h-48 object-cover rounded-lg">
-                                <div class="pt-6 flex-grow flex flex-col">
+                                <img src="${proj.image}" alt="${proj.name} thumbnail" class="w-full h-40 object-cover rounded-lg">
+                                <div class="pt-4 flex-grow flex flex-col">
                                     <h3 class="text-xl font-bold text-gray-900">${proj.name}</h3>
-                                    <div class="flex flex-wrap gap-2 mt-4">
+                                    <div class="flex flex-wrap gap-2 mt-3">
                                         ${proj.stacks.map(stack => `<span class="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">${stack}</span>`).join('')}
                                     </div>
-                                    <div class="mt-auto pt-6 flex gap-4 items-center">
+                                    <div class="mt-auto pt-4 flex gap-4 items-center">
                                         ${proj.github_link ? `<a href="${proj.github_link}" class="text-gray-500 hover:text-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>` : ''}
                                         ${proj.details_page ? `<a href="${proj.details_page}" class="ml-auto bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center justify-center gap-2 text-sm">Details</a>` : ''}
                                     </div>

@@ -2,7 +2,7 @@
   "profilePictureSize": 250,
   "aboutBackgroundImage": null,
   "publicationThumbnailWidth": "20%",
-  "sectionSpacingY": "5rem",
+  "sectionSpacingY": "2.5rem",
   "fontSizes": {
     "publicationTitle": "1.125rem",
     "publicationMeta": "0.75rem",
