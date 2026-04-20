@@ -66,9 +66,122 @@
             background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
             background-size: 22px 22px;
         }
+        /* Top banner */
+        #top-banner {
+            background: linear-gradient(100deg, #1e3a8a 0%, #2563eb 35%, #6366f1 65%, #7c3aed 100%);
+            background-size: 200% 100%;
+            animation: banner-gradient 6s ease-in-out infinite alternate;
+        }
+        @keyframes banner-gradient {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .banner-shimmer {
+            position: absolute;
+            top: 0; left: -100%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+            animation: banner-shine 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes banner-shine {
+            0%        { left: -60%; }
+            60%, 100% { left: 140%; }
+        }
+        #top-banner {
+            max-height: 60px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.35s ease;
+        }
+        #top-banner.hiding {
+            max-height: 0 !important;
+            opacity: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        /* Scroll progress bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+            z-index: 9999;
+            transition: width 0.12s ease;
+            border-radius: 0 2px 2px 0;
+        }
+        /* Gradient section headings */
+        .gradient-heading {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Nav active link */
+        header nav a.nav-active {
+            color: #2563eb !important;
+            font-weight: 600;
+        }
+        /* Card hover glow */
+        .card-glow {
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+        }
+        .card-glow:hover {
+            border-color: #bfdbfe !important;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.14) !important;
+            transform: translateY(-2px) scale(1.005) !important;
+        }
+        /* Header shadow on scroll */
+        header.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        }
+        header { transition: box-shadow 0.3s ease; }
+        /* News timeline first dot pulse */
+        .dot-pulse {
+            animation: pulse-dot 2.2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45); }
+            50%       { box-shadow: 0 0 0 7px rgba(59, 130, 246, 0); }
+        }
+        /* Improved scroll-to-top */
+        #scroll-to-top {
+            background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4) !important;
+        }
+        #scroll-to-top:hover {
+            transform: scale(1.12) translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5) !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <div id="scroll-progress"></div>
+
+    <!-- Top Banner -->
+    <div id="top-banner" class="relative text-white text-sm py-2.5 px-6 flex items-center justify-center">
+        <div class="banner-shimmer"></div>
+        <div class="relative z-10 flex items-center gap-2.5 flex-wrap justify-center">
+            <!-- Pulsing dot -->
+            <span class="inline-flex items-center justify-center">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+            </span>
+            <span class="font-medium tracking-wide">
+                🎉 New paper accepted at <strong class="font-bold">ACL 2026</strong> &mdash; RespiraMFM: Multimodal Foundation Model for Respiratory Disease Identification
+            </span>
+            <a href="#publications" class="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-colors px-3 py-0.5 rounded-full text-xs font-semibold backdrop-blur-sm border border-white/30">
+                View Paper <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <!-- Close button -->
+        <button id="close-banner" aria-label="Close banner" class="relative z-10 absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+    </div>
 
     <!-- Header & Navigation --><header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -166,55 +279,62 @@
 
         <!-- News Section --><section id="news" class="bg-gray-100/50 rounded-2xl fade-in-section">
             <div class="text-center mb-6">
-                <h2 class="text-4xl font-bold text-gray-900">News & Updates</h2>
-                <p class="text-lg text-gray-600 mt-2">Latest announcements and achievements</p>
+                <h2 class="text-4xl font-bold gradient-heading">News & Updates</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">Latest announcements and achievements</p>
             </div>
             <!-- News content will be injected here --><div id="news-container" class="max-w-3xl mx-auto"></div>
         </section>
 
         <!-- Research Interest Section --><section id="research" class="fade-in-section">
             <div class="text-center mb-7">
-                <h2 class="text-4xl font-bold text-gray-900">Research Interests</h2>
-                <p class="text-lg text-gray-600 mt-2">My primary areas of focus and exploration</p>
+                <h2 class="text-4xl font-bold gradient-heading">Research Interests</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">My primary areas of focus and exploration</p>
             </div>
             <!-- Research content will be injected here --><div id="research-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"></div>
         </section>
 
         <!-- Education Section --><section id="education" class="bg-gray-100/50 rounded-2xl fade-in-section">
             <div class="text-center mb-7">
-                <h2 class="text-4xl font-bold text-gray-900">Education</h2>
-                <p class="text-lg text-gray-600 mt-2">Academic background and achievements</p>
+                <h2 class="text-4xl font-bold gradient-heading">Education</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">Academic background and achievements</p>
             </div>
             <!-- Education content will be injected here --><div id="education-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
         </section>
 
         <!-- Work Experience Section --><section id="experience" class="fade-in-section">
             <div class="text-center mb-7">
-                <h2 class="text-4xl font-bold text-gray-900">Work Experience</h2>
-                <p class="text-lg text-gray-600 mt-2">Professional experience in research and industry</p>
+                <h2 class="text-4xl font-bold gradient-heading">Work Experience</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">Professional experience in research and industry</p>
             </div>
             <!-- Experience content will be injected here --><div id="experience-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
         </section>
 
         <!-- Publications Section --><section id="publications" class="bg-gray-100/50 rounded-2xl fade-in-section">
              <div class="text-center mb-7">
-                <h2 class="text-4xl font-bold text-gray-900">Publications</h2>
-                <p class="text-lg text-gray-600 mt-2">Recent research contributions in machine learning, computer vision, and AI applications</p>
+                <h2 class="text-4xl font-bold gradient-heading">Publications</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">Recent research contributions in machine learning, computer vision, and AI applications</p>
             </div>
             <!-- Publications content will be injected here --><div id="publications-container" class="space-y-5 max-w-5xl mx-auto"></div>
         </section>
         
         <!-- Projects Section --><section id="projects" class="fade-in-section">
             <div class="text-center mb-7">
-                <h2 class="text-4xl font-bold text-gray-900">Projects</h2>
-                <p class="text-lg text-gray-600 mt-2">A selection of my featured work</p>
+                <h2 class="text-4xl font-bold gradient-heading">Projects</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">A selection of my featured work</p>
             </div>
             <!-- Projects content will be injected here --><div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto"></div>
         </section>
 
         <!-- Contact Section --><section id="contact" class="bg-gray-100/50 rounded-2xl fade-in-section">
-            <h2 class="text-4xl font-bold text-gray-900 text-center">Get In Touch</h2>
-            <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto text-center">I'm always open to discussing new research, projects, or collaboration opportunities. Feel free to reach out!</p>
+            <h2 class="text-4xl font-bold gradient-heading text-center">Get In Touch</h2>
+            <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
+            <p class="text-sm text-gray-500 mt-2 max-w-2xl mx-auto text-center">I'm always open to discussing new research, projects, or collaboration opportunities. Feel free to reach out!</p>
             <div id="social-links-container" class="mt-8 flex justify-center gap-6">
                 <!-- Social links will be injected here -->
             </div>
@@ -236,6 +356,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+
+            // Top banner dismiss
+            const topBanner = document.getElementById('top-banner');
+            document.getElementById('close-banner').addEventListener('click', () => {
+                topBanner.classList.add('hiding');
+                setTimeout(() => topBanner.remove(), 400);
+            });
 
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -378,14 +505,20 @@
                             } catch (error) { console.error(`Failed to format date: "${dateString}"`, error); return dateString; }
                         };
 
+                        const highlightNews = (text) => text
+                            .replace(/ACL 2026/g, '<span style="color:#c0152a;background:#fff0f0;font-weight:600;padding:1px 7px;border-radius:6px;">ACL 2026</span>')
+                            .replace(/NeurIPS 2025/g, '<span style="color:#6d28d9;background:#f5f0ff;font-weight:600;padding:1px 7px;border-radius:6px;">NeurIPS 2025</span>')
+                            .replace(/Microsoft/g, '<span style="display:inline-flex;align-items:center;gap:5px;font-weight:600;vertical-align:middle;"><svg width="13" height="13" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="10" height="10" fill="#f25022"/><rect x="11" y="0" width="10" height="10" fill="#7fba00"/><rect x="0" y="11" width="10" height="10" fill="#00a4ef"/><rect x="11" y="11" width="10" height="10" fill="#ffb900"/></svg>Microsoft</span>')
+                            .replace(/The Ohio State University/g, '<span style="color:#ba0c2f;background:#fff0f2;font-weight:600;padding:1px 7px;border-radius:6px;">The Ohio State University</span>');
+
                         document.getElementById('news-container').innerHTML = newsData.map((item, index) => `
                             <div class="grid grid-cols-[auto_min-content_1fr] items-baseline gap-x-6">
                                 <p class="font-mono text-sm text-gray-500 text-right">${formatDate(item.date)}</p>
                                 <div class="relative">
-                                    <div class="h-4 w-4 rounded-full bg-white border-2 border-blue-500 z-10 relative mt-1"></div>
-                                    ${index !== newsData.length - 1 ? '<div class="absolute top-4 left-1/2 -translate-x-1/2 h-full w-px bg-gray-300"></div>' : ''}
+                                    <div class="h-4 w-4 rounded-full bg-white border-2 border-blue-500 z-10 relative mt-1 ${index === 0 ? 'dot-pulse' : ''}"></div>
+                                    ${index !== newsData.length - 1 ? '<div class="absolute top-4 left-1/2 -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-300 to-gray-200"></div>' : ''}
                                 </div>
-                                <div class="pb-6"><p class="text-gray-800">${item.title}</p></div>
+                                <div class="pb-6"><p class="text-gray-800">${highlightNews(item.title)}</p></div>
                             </div>`).join('');
 
                         // Render Research Interests
@@ -401,7 +534,7 @@
                         `).join('');
 
                         document.getElementById('education-container').innerHTML = educationData.map(edu => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all flex flex-col">
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow flex flex-col">
                                 <div class="flex justify-between items-start mb-3">
                                     <img src="${edu.logo}" alt="${edu.institution} Logo" class="w-12 h-12 rounded-lg">
                                     <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Education</span>
@@ -422,7 +555,7 @@
                             </div>`).join('');
 
                         document.getElementById('experience-container').innerHTML = experienceData.map(exp => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all">
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow">
                                 <div class="flex justify-between items-start mb-3">
                                     <img src="${exp.logo}" alt="${exp.company} Logo" class="w-12 h-12 rounded-lg">
                                     <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Work</span>
@@ -438,7 +571,7 @@
                             </div>`).join('');
 
                         document.getElementById('publications-container').innerHTML = publicationsData.map((pub, index) => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow">
                                 <div class="md:flex gap-6 items-stretch">
                                     <!-- Thumbnail: badge above, image fills remaining height -->
                                     <div class="w-full md:w-auto flex-shrink-0 mb-4 md:mb-0 flex flex-col" style="flex-basis: ${config.publicationThumbnailWidth};">
@@ -471,7 +604,7 @@
 
                         // Render Projects
                         document.getElementById('projects-container').innerHTML = projectsData.map(proj => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all flex flex-col">
+                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow flex flex-col">
                                 <img src="${proj.image}" alt="${proj.name} thumbnail" class="w-full h-40 object-cover rounded-lg">
                                 <div class="pt-4 flex-grow flex flex-col">
                                     <h3 class="text-xl font-bold text-gray-900">${proj.name}</h3>
@@ -505,6 +638,32 @@
                 });
             }, { threshold: 0.1 });
             sectionsToAnimate.forEach(section => observer.observe(section));
+
+            // Scroll progress bar
+            const progressBar = document.getElementById('scroll-progress');
+            // Active nav tracking
+            const header = document.querySelector('header');
+            const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+            const allSections = document.querySelectorAll('section[id]');
+
+            window.addEventListener('scroll', () => {
+                // Progress bar
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+
+                // Header shadow
+                header.classList.toggle('scrolled', scrollTop > 10);
+
+                // Active nav link
+                let current = '';
+                allSections.forEach(section => {
+                    if (scrollTop >= section.offsetTop - 120) current = section.id;
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle('nav-active', link.getAttribute('href') === '#' + current);
+                });
+            });
 
             // Scroll to top button logic
             const scrollToTopBtn = document.getElementById('scroll-to-top');
