@@ -1,9 +1,21 @@
 [
   {
+    "title": "Applied Science Intern",
+    "company": "Microsoft",
+    "logo": "media/microsoft.png",
+    "period": "May 2026 - August 2026",
+    "location": "Redmond, WA",
+    "details": [
+      "Working with Office Powerpoint team.",
+      "Developing LLM Agent for Powerpoint."
+    ],
+    "skills": ["LLM Agent", "Reinforcement Learning"]
+  },
+  {
     "title": "Research Intern",
     "company": "Microsoft",
     "logo": "media/microsoft.png",
-    "period": "Summer 2025",
+    "period": "June 2025 - August 2025",
     "location": "Mountain View, CA",
     "details": [
       "Design a Neural Audio Codec that disentangles speaker identity.",
