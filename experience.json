@@ -6,8 +6,9 @@
     "period": "May 2026 - August 2026",
     "location": "Redmond, WA",
     "details": [
-      "Working with Office Powerpoint team.",
-      "Developing LLM Agent for Powerpoint."
+      "Reducing inference COGS by model routing.",
+      "Knowledge distillation to train a compact student mode.",
+      "Prototyped prompt caching to reduce token usage and latency."
     ],
     "skills": ["LLM Agent", "Reinforcement Learning"]
   },
