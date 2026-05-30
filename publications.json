@@ -1,5 +1,18 @@
 [
   {
+    "status": "",
+    "status_colors": "bg-black-200 text-black-800",
+    "year": "2026",
+    "title": "SuperMemory-VQA: An Egocentric Visual Question-Answering Benchmark for Long-Horizon Memory",
+    "authors": "Samiul Alam, Shakhrul Iman Siam, Michael J. Proulx, James Fort, Richard Newcombe, Hyo Jin Kim, Mi Zhang",
+    "conference": "Under Review",
+    "thumbnail": "media/supermemory-vqa.png",
+    "project_link": "",
+    "github_link": "https://github.com/AIoT-MLSys-Lab/supermemory-vqa",
+    "description": "",
+    "tags": ["VQA Benchmark", "Computer Vision", "Egocentric AI"]
+  },
+  {
     "status": "ACL 2026",
     "status_colors": "bg-red-200 text-red-800",
     "year": "2026",
