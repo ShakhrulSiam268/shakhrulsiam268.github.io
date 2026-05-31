@@ -6,9 +6,9 @@
     "period": "May 2026 - August 2026",
     "location": "Redmond, WA",
     "details": [
-      "Reducing inference COGS by model routing.",
-      "Knowledge distillation to train a compact student mode.",
-      "Prototyped prompt caching to reduce token usage and latency."
+      "Working on LLM Agent for Powerpoint presentation generation.",
+      "Reducing inference COGS by model routing and prompt caching.",
+      "Knowledge distillation to train a compact student model."
     ],
     "skills": ["LLM Agent", "Reinforcement Learning"]
   },
