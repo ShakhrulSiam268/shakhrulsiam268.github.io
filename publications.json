@@ -10,7 +10,20 @@
     "project_link": "",
     "github_link": "https://github.com/AIoT-MLSys-Lab/supermemory-vqa",
     "description": "",
-    "tags": ["VQA Benchmark", "Computer Vision", "Egocentric AI"]
+    "tags": ["Computer Vision", "Egocentric AI", "VQA Benchmark"]
+  },
+  {
+    "status": "",
+    "status_colors": "bg-black-200 text-black-800",
+    "year": "2026",
+    "title": "ChildVox: A Speech, Audio, and Large Audio-Language Model Benchmark in Understanding and Characterizing Sound across Childhood",
+    "authors": "Tiantian Feng, Anfeng Xu, Xuan Shi, Aditya Kommineni, Shakhrul Iman Siam, Megan Micheletti, Zhonghao Shi, Helen Tager-Flusberg, Mi Zhang, Lynn K Perry, Catherine Lord, Daniel Messinger, Shrikanth Narayanan",
+    "conference": "Under Review",
+    "thumbnail": "media/childvox.png",
+    "paper_link": "https://arxiv.org/pdf/2605.29257",
+    "project_link": "https://tiantiaf0627.github.io/childvox/",
+    "description": "We present ChildVox, a novel benchmark for characterizing the diverse acoustic signals through which children communicate. Specifically, ChildVox follows the full developmental trajectory from birth through school age, covering physiological sounds, non-linguistic vocalizations, canonical syllables, and spoken language. ChildVox integrates more than 20 sub-tasks across 17 child-centered audio and speech datasets, enabling systematic cross-corpus and cross-domain comparison. We evaluate a representative range of audio and speech foundation models, including self-supervised, ASR-oriented, and large audio-language models, on tasks including physiological sound classification, vocalization and canonical syllables modeling, and speech quality assessment and recognition. Benchmark results show that ChildVox provides a suite of high-performance models in recognizing a wide range of acoustic signals from children, supporting downstream applications such as characterizing children's language levels and tracking speech production with age.",
+    "tags": ["Audio and Speech"]
   },
   {
     "status": "ACL 2026",
@@ -24,7 +37,7 @@
     "project_link": "https://aiot-mlsys-lab.github.io/RespiraMFM.github.io/",
     "github_link": "https://github.com/AIoT-MLSys-Lab/RespiraMFM",
     "description": "Respiratory diseases remain a leading cause of global mortality, where timely and accurate diagnosis is critical to improving patient outcomes and reducing healthcare burdens. While prior work has explored audio-based models for respiratory disease detection, such unimodal approaches often suffer from limited generalizability and diagnostic precision. In this paper, we propose RespiraMFM, a Multimodal Foundation Model that integrates respiratory sounds with patient medical history and symptoms to enhance diagnostic accuracy and disease detection capabilities. We introduce an effective contrastive alignment strategy for audio-text multimodal integration, allowing the model to learn better cross-modal representations between respiratory sounds and corresponding textual clinical information. We evaluate RespiraMFM across five major respiratory diseases using seven real-world datasets in both supervised fine-tuning and zero-shot settings, achieving a 9.15% improvement in AUROC on supervised tasks and a 20.98% gain on zero-shot tasks over existing baselines. These findings underscore the potential of our framework to advance early diagnosis and improve clinical decision-making in respiratory disease management.",
-    "tags": ["Multimodal LLM", "Health AI", "Audio"]
+    "tags": ["Audio and Speech", "Multimodal LLM", "Health AI"]
   },
   {
     "status": "Mobisys 2026",
@@ -35,7 +48,7 @@
     "conference": "The 24th ACM International Conference on Mobile Systems, Applications, and Services (ACM MobiSys 2026)",
     "thumbnail": "media/memolens.png",
     "description": "",
-    "tags": ["Computer Vision", "Egocentric AI", "Meta Aria Glass"]
+    "tags": ["Computer Vision", "Egocentric AI"]
   },
   {
     "status": "NeurIPS 2025",
@@ -46,7 +59,7 @@
     "conference": "Advances in Neural Information Processing Systems (NeurIPS)",
     "thumbnail": "media/reading_wild_.gif",
     "description": "To enable egocentric contextual AI in always-on smart glasses, it is crucial to be able to keep a record of the user's interactions with the world, including during reading. In this paper, we introduce a new task of reading recognition to determine when the user is reading. We first introduce the first-of-its-kind large-scale multimodal Reading in the Wild dataset, containing 100 hours of reading and non-reading videos in diverse and realistic scenarios. We then identify three modalities (egocentric RGB, eye gaze, head pose) that can be used to solve the task, and present a flexible transformer model that performs the task using these modalities, either individually or combined. We show that these modalities are relevant and complementary to the task, and investigate how to efficiently and effectively encode each modality. Additionally, we show the usefulness of this dataset towards classifying types of reading, extending current reading understanding studies conducted in constrained settings to larger scale, diversity and realism. Code, model, and data will be public.",
-    "tags": ["Computer Vision", "Egocentric AI", "Meta Aria Glass"],
+    "tags": ["Computer Vision", "Egocentric AI"],
     "paper_link": "media/pdf/reading_recognition.pdf",
     "project_link": "https://www.projectaria.com/datasets/reading-in-the-wild/",
     "github_link": "https://github.com/AIoT-MLSys-Lab/Reading-in-the-Wild-Columbus"
@@ -60,7 +73,7 @@
     "conference": "The 22th ACM International Conference on Mobile Systems, Applications, and Services (ACM MobiSys 2024)",
     "thumbnail": "media/paper_chirp.png",
     "description": "This paper introduces ChirpTransformer, a versatile LoRa encoding framework that harnesses broad chirp features to dynamically modulate data, enhancing network coverage, throughput, and energy efficiency. Unlike the standard LoRa encoder that offers only single configurable chirp feature, our framework introduces four distinct chirp features, expanding the spectrum of methods available for data modulation. To implement these features on commercial off-the-shelf (COTS) LoRa nodes, we utilize a combination of a software design and a hardware interrupt. ChirpTransformer serves as the foundation for optimizing encoding and decoding in three specific case studies: weak signal decoding for extended network coverage, concurrent transmission for heightened network throughput, and data rate adaptation for improved network energy efficiency.",
-    "tags": ["Wireless Communication", "AIoT"],
+    "tags": ["AIoT"],
     "paper_link": "media/pdf/paper_chirp.pdf",
     "project_link": null,
     "github_link": null
@@ -102,7 +115,7 @@
     "conference": "In 2022 12th International Conference on Electrical and Computer Engineering (ICECE)",
     "thumbnail": "media/paper_brl.png",
     "description": "Sleep disorders are a common problem that disrupts our regular sleeping patterns. To diagnose sleep disorders, Long-term monitoring of sleep could be useful. In this paper an automated scheme of sleep staging is presented based on Bioradiolocation signals using time and frequency domain feature extraction and Random Forest Classifier. This experiment is validated using data of 32 subjects without sleep-related breathing disorders. A Random Forest based algorithm is used for two, three, four and five-stage classification. We achieved the best performance so far (89.35% accuracy and 0.65 Cohens kappa) on 2-stage, 75.3% accuracy on 3-stage, 56.18% on 4-stage, and 54.2% accuracy on 5-stage classification with BRL Signals. These results show high potential in real-life sleep stage monitoring systems.",
-    "tags": ["Biomedical Signal Proecssing", "Time Series"],
+    "tags": ["Biomedical Signal Proecssing"],
     "paper_link": "media/pdf/paper_brl.pdf",
     "project_link": null,
     "github_link": null
@@ -116,7 +129,7 @@
     "conference": "In 2019 IEEE International Conference on Signal Processing, Information, Communication & Systems (SPICSCON)",
     "thumbnail": "media/paper_dual.png",
     "description": "This paper proposes a dual-purpose braille system for the visually impaired people. There are two main features of this system- object detection and optical character recognition. Real time object detection will help a visually impaired person to know about the things around him and optical character recognition will help him reading characters in both international (English) and local community (Bengali) language. In this paper, the detailed methodology of our proposed method is described. A pre-trained convolutional neural network (AlexNet) is used for classifying the objects and an OCR engine (Tesseract) along with basic image processing is used for optical character recognition. A refreshable braille display is also designed to show the braille characters.",
-    "tags": ["Computer Vision", "Microcontroller"],
+    "tags": ["Computer Vision"],
     "paper_link": "media/pdf/paper_dual.pdf",
     "project_link": null,
     "github_link": null
