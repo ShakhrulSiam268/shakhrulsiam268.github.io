@@ -7,9 +7,10 @@
     "authors": "Samiul Alam, Shakhrul Iman Siam, Michael J. Proulx, James Fort, Richard Newcombe, Hyo Jin Kim, Mi Zhang",
     "conference": "Under Review",
     "thumbnail": "media/supermemory-vqa.png",
-    "project_link": "",
+    "project_link": "https://supermemory-vqa.github.io/",
+    "paper_link": "https://arxiv.org/pdf/2606.00825",
     "github_link": "https://github.com/AIoT-MLSys-Lab/supermemory-vqa",
-    "description": "",
+    "description": "AI glasses present a compelling platform for AI agents to serve as personalized memory assistants. To be genuinely useful, such systems must move beyond short-term video comprehension and address memory gaps that humans experience for practical, personal, or social purposes over longitudinal egocentric video streams. However, existing egocentric datasets predominantly focus on action recognition or generic QAs from short clips, measuring perceptual capabilities rather than realistic human memory needs. We introduce SuperMemory-VQA, an egocentric visual question answering (VQA) dataset for evaluating AI assistants on practical, long-horizon memory tasks. It contains 52.9 hours of everyday activities recorded with AI glasses, including synchronized RGB video, audio transcription, eye gaze, IMU, and SLAM trajectories. Through a humanverified annotation pipeline, we construct grounded 4,853 question-answer pairs that span object and location memory, intent recall, visual scene recall, timeline reconstruction, conversational memory, and in-context retrieval. Each question is posed as multiple-choice with an explicit “unanswerable” option to test hallucination robustness. Benchmarking leading agentic frameworks and LLM backbones reveals that existing systems remain far from reliable on real-world memory tasks, highlighting the need for new architectures for grounded AI memory that can answer only when evidence is sufficient. A participant survey further supports that our questions are realistic, useful, and aligned with everyday memory needs",
     "tags": ["Computer Vision", "Egocentric AI", "VQA Benchmark"]
   },
   {
@@ -47,7 +48,8 @@
     "authors": "Samiul Alam, Shakhrul Iman Siam, Mi Zhang",
     "conference": "The 24th ACM International Conference on Mobile Systems, Applications, and Services (ACM MobiSys 2026)",
     "thumbnail": "media/memolens.png",
-    "description": "",
+    "paper_link": "https://dl.acm.org/doi/abs/10.1145/3745756.3809235",
+    "description": "Spatial computing empowered by augmented reality (AR) glasses emerges as a new computing paradigm. One of its most transformative capabilities is super memory - the super power to accurately recall objects and people an individual has been paying attention to or interacting with in the physical world. In this work, we propose MemoLensthat empowers AR glasses with super memory. Achieving such capability is not trivial: it requires storing vast amounts of visual data as compact digital memory and retrieving relevant information from the memory efficiently when being prompted. MemoLens achieves this via two key innovations. First, MemoLens leverages eye gaze information captured by the AR glasses to detect what the individual is paying attention to, and introduces a spatio-temporal token compression technique to generate highly compact visual memory. Second, MemoLens introduces a hierarchical search scheme that enables efficient retrieval of relevant memory based on user prompts. We implemented MemoLens using Meta's Aria AR glasses, and evaluated its performance on more than 100 hours of egocentric videos collected in real-world settings. Our results show that MemoLens is able to achieve accurate memory retrieval in real time. Given its promising performance, we believe MemoLens represents a significant step towards realizing always-on super memory in next-generation AR glasses.",
     "tags": ["Computer Vision", "Egocentric AI"]
   },
   {
