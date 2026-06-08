@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Shakhrul Iman Siam - Portfolio</title>
+    <link rel="icon" type="image/png" href="media/osu_logo.png">
     <!-- <script src="https://cdn.tailwindcss.com/3.4.10"></script> -->
     <script src="assets/js/tailwindcss.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
@@ -66,40 +67,6 @@
             background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
             background-size: 22px 22px;
         }
-        /* Top banner */
-        #top-banner {
-            background: linear-gradient(100deg, #1e3a8a 0%, #2563eb 35%, #6366f1 65%, #7c3aed 100%);
-            background-size: 200% 100%;
-            animation: banner-gradient 6s ease-in-out infinite alternate;
-        }
-        @keyframes banner-gradient {
-            0%   { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        .banner-shimmer {
-            position: absolute;
-            top: 0; left: -100%;
-            width: 55%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-            animation: banner-shine 4s ease-in-out infinite;
-            pointer-events: none;
-        }
-        @keyframes banner-shine {
-            0%        { left: -60%; }
-            60%, 100% { left: 140%; }
-        }
-        #top-banner {
-            max-height: 60px;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.35s ease;
-        }
-        #top-banner.hiding {
-            max-height: 0 !important;
-            opacity: 0;
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-        }
         /* Scroll progress bar */
         #scroll-progress {
             position: fixed;
@@ -158,30 +125,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
     <div id="scroll-progress"></div>
-
-    <!-- Top Banner -->
-    <div id="top-banner" class="relative text-white text-sm py-2.5 px-6 flex items-center justify-center">
-        <div class="banner-shimmer"></div>
-        <div class="relative z-10 flex items-center gap-2.5 flex-wrap justify-center">
-            <!-- Pulsing dot -->
-            <span class="inline-flex items-center justify-center">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                </span>
-            </span>
-            <span class="font-medium tracking-wide">
-                🎉 New paper accepted at <strong class="font-bold">ACL 2026</strong> &mdash; RespiraMFM: Multimodal Foundation Model for Respiratory Disease Identification
-            </span>
-            <a href="#publications" class="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-colors px-3 py-0.5 rounded-full text-xs font-semibold backdrop-blur-sm border border-white/30">
-                View Paper <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-        <!-- Close button -->
-        <button id="close-banner" aria-label="Close banner" class="relative z-10 absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-    </div>
 
     <!-- Header & Navigation --><header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -357,13 +300,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
 
-            // Top banner dismiss
-            const topBanner = document.getElementById('top-banner');
-            document.getElementById('close-banner').addEventListener('click', () => {
-                topBanner.classList.add('hiding');
-                setTimeout(() => topBanner.remove(), 400);
-            });
-
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -439,7 +375,10 @@
                         document.getElementById('about-name').textContent = aboutData.name;
                         document.title = `${aboutData.name} - Portfolio`;
                         document.getElementById('about-title').textContent = aboutData.title;
-                        document.getElementById('about-bio').textContent = aboutData.bio;
+                        const bioHtml = aboutData.advisor_link
+                            ? aboutData.bio.replace('Prof. Mi Zhang', `<a href="${aboutData.advisor_link}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Prof. Mi Zhang</a>`)
+                            : aboutData.bio;
+                        document.getElementById('about-bio').innerHTML = bioHtml;
                         document.getElementById('about-location').textContent = aboutData.location;
                         const emailLink = document.getElementById('about-email');
                         emailLink.textContent = aboutData.email;
