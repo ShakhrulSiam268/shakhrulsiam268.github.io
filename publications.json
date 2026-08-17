@@ -28,7 +28,7 @@
   },
   {
     "status": "IWAENC 2026",
-    "status_colors": "bg-black-200 text-black-800",
+    "status_colors": "bg-blue-200 text-blue-800",
     "year": "2026",
     "title": "DECAF: A Privacy Preserving Speech Codec Using Speaker Disentanglement and Canonical Voice Conversion",
     "authors": "Shakhrul Iman Siam, Dushyant Sharma, Stanislav Yu. Kruchinin, Peter Skala",
