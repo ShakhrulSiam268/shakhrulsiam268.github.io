@@ -5,12 +5,16 @@
     "logo": "media/microsoft.png",
     "period": "May 2026 - August 2026",
     "location": "Redmond, WA",
+    "summary": "LLM agents for automated PowerPoint generation with VLM slide inspection.",
     "details": [
       "Worked on LLM Agent for Powerpoint presentation generation.",
       "Redced inference COGS and latency by VQA optimization.",
       "Rendering strategy for optimal slide inspection using VLM."
     ],
-    "skills": ["LLM Agent", "Reinforcement Learning"]
+    "skills": [
+      "LLM Agent",
+      "Reinforcement Learning"
+    ]
   },
   {
     "title": "Research Intern",
@@ -18,12 +22,16 @@
     "logo": "media/microsoft.png",
     "period": "June 2025 - August 2025",
     "location": "Mountain View, CA",
+    "summary": "Speaker-disentangling neural audio codec and LLM-based speech recognition.",
     "details": [
       "Design a Neural Audio Codec that disentangles speaker identity.",
       "Achieved 95% improvement of Equal Error Rate.",
       "Fine-tune a LLM-based Automatic Speech Recognition System."
     ],
-    "skills": ["Automated Speech Recognition", "Neural Audio Codec"]
+    "skills": [
+      "Automated Speech Recognition",
+      "Neural Audio Codec"
+    ]
   },
   {
     "title": "Graduate Research Assistant",
@@ -31,12 +39,17 @@
     "logo": "media/OSU.png",
     "period": "2023 - present",
     "location": "Columbus, OH, USA",
+    "summary": "Egocentric long-video understanding and multimodal models for healthcare.",
     "details": [
       "Multi-modal reading dataset of 100 hours of egocentric videos.",
       "Medical QA Assistant using Retrieval-Augmented Generation",
       "Multimodal Foundation Model for Respiratory Health Diagnosis"
     ],
-    "skills": ["Egocentric AI", "Multi-modal LLM", "NLP"]
+    "skills": [
+      "Egocentric AI",
+      "Multi-modal LLM",
+      "NLP"
+    ]
   },
   {
     "title": "Machine Learning Engineer",
@@ -44,12 +57,16 @@
     "logo": "media/aci.png",
     "period": "October 2021 - August 2023",
     "location": "Dhaka, Bangladesh",
+    "summary": "Production computer vision and speech systems for retail and security.",
     "details": [
       "Person re-identification and tracking using CCTV camera.",
       "Facial Recognition based automatic attendance system.",
       "Voice Controlled Conversational Chatbot."
     ],
-    "skills": ["Computer Vision", "Automated Speech Recognition"]
+    "skills": [
+      "Computer Vision",
+      "Automated Speech Recognition"
+    ]
   },
   {
     "title": "Research and Development Executive",
@@ -57,12 +74,15 @@
     "logo": "media/spectrum.jpg",
     "period": "April 2021 - September 2021",
     "location": "Dhaka, Bangladesh",
+    "summary": "Low-cost embedded hardware: EOD robot prototype and custom PCB design.",
     "details": [
       "Developed a prototype of a low-cost mobile device.",
       "Worked on developing a EOD Robot.",
       "PCB Design"
     ],
-    "skills": ["Robotics", "Microcontroller"]
+    "skills": [
+      "Robotics",
+      "Microcontroller"
+    ]
   }
 ]
-

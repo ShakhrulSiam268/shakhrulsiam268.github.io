@@ -14,8 +14,8 @@
     "tags": ["Computer Vision", "Egocentric AI", "VQA Benchmark"]
   },
   {
-    "status": "",
-    "status_colors": "bg-black-200 text-black-800",
+    "status": "EMNLP 2026",
+    "status_colors": "bg-red-200 text-red-800",
     "year": "2026",
     "title": "ChildVox: A Speech, Audio, and Large Audio-Language Model Benchmark in Understanding and Characterizing Sound across Childhood",
     "authors": "Tiantian Feng, Anfeng Xu, Xuan Shi, Aditya Kommineni, Shakhrul Iman Siam, Megan Micheletti, Zhonghao Shi, Helen Tager-Flusberg, Mi Zhang, Lynn K Perry, Catherine Lord, Daniel Messinger, Shrikanth Narayanan",

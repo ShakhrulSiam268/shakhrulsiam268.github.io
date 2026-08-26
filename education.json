@@ -5,10 +5,7 @@
     "logo": "media/OSU.png",
     "period": "2023 - Present",
     "location": "Columbus, Ohio, USA",
-    "details": [
-      "GRA at OSU AIoT and Machine Learning Systems Lab",
-      "Thesis: Egocentric Long Video Understanding."
-    ],
+    "details": [],
     "courses": [
       "Speech and Natural Language Processing",
       "Computer Vision"
@@ -21,10 +18,7 @@
     "logo": "media/BUET.svg",
     "period": "2016 - 2021",
     "location": "Dhaka, Bangladesh",
-    "details": [
-      "Major : Communication and Signal Processing",
-      "Thesis: Biomedical Signal Processing"
-    ],
+    "details": [],
     "courses": [
       "Digital Signal Processing",
       "Deep Learning"

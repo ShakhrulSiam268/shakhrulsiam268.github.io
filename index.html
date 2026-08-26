@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Shakhrul Iman Siam - Portfolio</title>
     <link rel="icon" type="image/png" href="media/osu_logo.png">
+    <!-- Apply saved theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <!-- <script src="https://cdn.tailwindcss.com/3.4.10"></script> -->
     <script src="assets/js/tailwindcss.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
@@ -67,6 +78,10 @@
             background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
             background-size: 22px 22px;
         }
+        /* Hero background when no aboutBackgroundImage is configured */
+        .about-plain {
+            background: linear-gradient(to bottom, #ffffff, #f9fafb);
+        }
         /* Scroll progress bar */
         #scroll-progress {
             position: fixed;
@@ -121,6 +136,118 @@
             transform: scale(1.12) translateY(-2px) !important;
             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5) !important;
         }
+
+        /* News highlight pills (themable) */
+        .hl { font-weight: 600; padding: 1px 7px; border-radius: 6px; }
+        .hl-acl     { color: #c0152a; background: #fff0f0; }
+        .hl-neurips { color: #6d28d9; background: #f5f0ff; }
+        .hl-osu     { color: #ba0c2f; background: #fff0f2; }
+
+        /* ============================================================
+           DARK MODE
+           Remaps the Tailwind utilities this page already uses, so
+           dynamically-injected cards are themed without extra classes.
+           ============================================================ */
+        html.dark { color-scheme: dark; }
+        html.dark body { background-color: #0f172a; color: #cbd5e1; }
+
+        /* Surfaces */
+        html.dark .bg-white        { background-color: #1e293b; }
+        html.dark .bg-white\/80    { background-color: rgba(30, 41, 59, 0.8); }
+        html.dark .bg-gray-50      { background-color: #0f172a; }
+        html.dark .bg-gray-100     { background-color: #1e293b; }
+        html.dark .bg-gray-100\/50 { background-color: rgba(30, 41, 59, 0.45); }
+        html.dark .bg-gray-200     { background-color: #334155; }
+        html.dark .hover\:bg-gray-100:hover { background-color: #334155; }
+
+        /* Text */
+        html.dark .text-gray-900 { color: #f1f5f9; }
+        html.dark .text-gray-800 { color: #e2e8f0; }
+        html.dark .text-gray-700 { color: #cbd5e1; }
+        html.dark .text-gray-600 { color: #cbd5e1; }
+        html.dark .text-gray-500 { color: #94a3b8; }
+        html.dark .text-gray-400 { color: #64748b; }
+        html.dark .marker\:text-gray-400::marker { color: #64748b; }
+        html.dark .text-blue-600 { color: #60a5fa; }
+        html.dark .text-blue-500 { color: #60a5fa; }
+        html.dark .hover\:text-blue-600:hover { color: #93c5fd; }
+
+        /* Borders */
+        html.dark .border-gray-200 { border-color: #334155; }
+        html.dark .border-gray-300 { border-color: #475569; }
+        html.dark .ring-white { --tw-ring-color: #334155; }
+
+        /* Tinted chips: darken the fill, lighten the ink */
+        html.dark .bg-blue-100   { background-color: rgba(59, 130, 246, 0.16); }
+        html.dark .bg-blue-200   { background-color: rgba(59, 130, 246, 0.22); }
+        html.dark .bg-indigo-100 { background-color: rgba(99, 102, 241, 0.16); }
+        html.dark .bg-purple-100 { background-color: rgba(168, 85, 247, 0.16); }
+        html.dark .bg-purple-200 { background-color: rgba(168, 85, 247, 0.22); }
+        html.dark .bg-green-100  { background-color: rgba(34, 197, 94, 0.16); }
+        html.dark .bg-yellow-100 { background-color: rgba(234, 179, 8, 0.16); }
+        html.dark .bg-red-200    { background-color: rgba(239, 68, 68, 0.20); }
+        html.dark .bg-amber-100  { background-color: rgba(245, 158, 11, 0.16); }
+        html.dark .bg-orange-100 { background-color: rgba(249, 115, 22, 0.16); }
+        html.dark .bg-slate-100  { background-color: rgba(148, 163, 184, 0.16); }
+        html.dark .text-blue-800   { color: #93c5fd; }
+        html.dark .text-indigo-800 { color: #a5b4fc; }
+        html.dark .text-purple-800 { color: #d8b4fe; }
+        html.dark .text-green-800  { color: #86efac; }
+        html.dark .text-yellow-800 { color: #fde047; }
+        html.dark .text-red-800    { color: #fca5a5; }
+        html.dark .text-amber-800  { color: #fcd34d; }
+        html.dark .text-amber-600  { color: #fbbf24; }
+        html.dark .text-orange-800 { color: #fdba74; }
+        html.dark .text-orange-600 { color: #fb923c; }
+        html.dark .text-slate-700  { color: #cbd5e1; }
+        html.dark .text-slate-600  { color: #cbd5e1; }
+
+        /* Section headings & accents */
+        html.dark .gradient-heading {
+            background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        html.dark header nav a.nav-active { color: #60a5fa !important; }
+        html.dark .card-glow:hover {
+            border-color: #3b82f6 !important;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.22) !important;
+        }
+
+        /* Hero */
+        html.dark .blended-background::before {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 1) 90%);
+        }
+        html.dark .about-plain {
+            background: linear-gradient(to bottom, #16233d, #0f172a);
+        }
+        html.dark .about-dots {
+            background-image: radial-gradient(circle, #1e3a8a 1px, transparent 1px);
+        }
+        html.dark .bg-blue-200.blur-3xl   { background-color: #1d4ed8; opacity: 0.22; }
+        html.dark .bg-indigo-200.blur-3xl { background-color: #4338ca; opacity: 0.22; }
+
+        /* Availability callout */
+        html.dark .availability-card {
+            border-color: rgba(16, 185, 129, 0.35);
+            background-color: rgba(16, 185, 129, 0.10);
+        }
+        html.dark .text-emerald-700 { color: #6ee7b7; }
+
+        /* Awards section gradient */
+        html.dark #awards {
+            background-image: linear-gradient(to bottom right, rgba(245, 158, 11, 0.07), rgba(30, 41, 59, 0.45) 50%, rgba(59, 130, 246, 0.07));
+        }
+
+        /* News highlight pills */
+        html.dark .hl-acl     { color: #fca5a5; background: rgba(239, 68, 68, 0.16); }
+        html.dark .hl-neurips { color: #c4b5fd; background: rgba(139, 92, 246, 0.16); }
+        html.dark .hl-osu     { color: #fda4af; background: rgba(244, 63, 94, 0.16); }
+
+        /* Theme toggle icon swap */
+        .theme-icon-dark { display: none; }
+        html.dark .theme-icon-light { display: none; }
+        html.dark .theme-icon-dark  { display: block; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -141,14 +268,25 @@
                 <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">Education</a>
                 <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
                 <a href="#publications" class="text-gray-600 hover:text-blue-600 transition-colors">Publications</a>
+                <a href="#awards" class="text-gray-600 hover:text-blue-600 transition-colors">Awards</a>
                 <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                <button id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" class="text-gray-600 hover:text-blue-600 transition-colors p-1.5 rounded-lg hover:bg-gray-100">
+                    <i data-lucide="moon" class="w-5 h-5 theme-icon-light"></i>
+                    <i data-lucide="sun" class="w-5 h-5 theme-icon-dark"></i>
+                </button>
                 <a id="nav-resume-link" href="#" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors">Resume</a>
-                
+
             </nav>
-            <button id="mobile-menu-button" class="md:hidden">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="theme-toggle-mobile" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" class="text-gray-600 hover:text-blue-600 transition-colors p-1.5 rounded-lg hover:bg-gray-100">
+                    <i data-lucide="moon" class="w-5 h-5 theme-icon-light"></i>
+                    <i data-lucide="sun" class="w-5 h-5 theme-icon-dark"></i>
+                </button>
+                <button id="mobile-menu-button">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
              <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">About</a>
@@ -157,6 +295,7 @@
              <a href="#education" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Education</a>
              <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
              <a href="#publications" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Publications</a>
+             <a href="#awards" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Awards</a>
              <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
              <a id="mobile-nav-resume-link" href="#" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Resume</a>
              <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
@@ -192,6 +331,7 @@
                         <div class="h-1 w-2 bg-blue-300 rounded-full"></div>
                     </div>
                     <p id="about-bio" class="text-gray-600 leading-relaxed text-[0.95rem]"></p>
+                    <!-- Availability callout (injected from about.json) --><div id="about-availability"></div>
                     <div id="about-skills" class="flex flex-wrap justify-center md:justify-start gap-2 mt-4"></div>
                     <!-- Location & email -->
                     <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-1.5 mt-4 text-sm text-gray-500">
@@ -244,7 +384,7 @@
                 <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
                 <p class="text-sm text-gray-500 mt-1">Academic background and achievements</p>
             </div>
-            <!-- Education content will be injected here --><div id="education-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
+            <!-- Education content will be injected here --><div id="education-container" class="flex flex-col gap-3 max-w-3xl mx-auto"></div>
         </section>
 
         <!-- Work Experience Section --><section id="experience" class="fade-in-section">
@@ -253,7 +393,7 @@
                 <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-blue-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-blue-400 rounded-full"></div></div>
                 <p class="text-sm text-gray-500 mt-1">Professional experience in research and industry</p>
             </div>
-            <!-- Experience content will be injected here --><div id="experience-container" class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto"></div>
+            <!-- Experience content will be injected here --><div id="experience-container" class="flex flex-col gap-3 max-w-3xl mx-auto"></div>
         </section>
 
         <!-- Publications Section --><section id="publications" class="bg-gray-100/50 rounded-2xl fade-in-section">
@@ -264,7 +404,16 @@
             </div>
             <!-- Publications content will be injected here --><div id="publications-container" class="space-y-5 max-w-5xl mx-auto"></div>
         </section>
-        
+
+        <!-- Awards Section --><section id="awards" class="bg-gradient-to-br from-amber-50/70 via-white to-blue-50/50 rounded-2xl fade-in-section">
+            <div class="text-center mb-7">
+                <h2 class="text-4xl font-bold gradient-heading">Honors &amp; Awards</h2>
+                <div class="flex justify-center items-center gap-1.5 mt-2"><div class="h-px w-8 bg-gradient-to-r from-transparent to-amber-400 rounded-full"></div><div class="h-1.5 w-1.5 bg-amber-500 rounded-full"></div><div class="h-px w-8 bg-gradient-to-l from-transparent to-amber-400 rounded-full"></div></div>
+                <p class="text-sm text-gray-500 mt-1">Competition placements and academic distinctions</p>
+            </div>
+            <!-- Awards content will be injected here --><div id="awards-container" class="grid md:grid-cols-2 gap-3 max-w-5xl mx-auto"></div>
+        </section>
+
         <!-- Projects Section --><section id="projects" class="fade-in-section">
             <div class="text-center mb-7">
                 <h2 class="text-4xl font-bold gradient-heading">Projects</h2>
@@ -299,6 +448,23 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+
+            // Dark mode toggle (initial class is applied by the inline <head> script)
+            const setTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                try { localStorage.setItem('theme', theme); } catch (e) {}
+            };
+            document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+                });
+            });
+            // Follow the OS setting until the user makes an explicit choice
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                let saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (err) {}
+                if (!saved) document.documentElement.classList.toggle('dark', e.matches);
+            });
 
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -341,14 +507,15 @@
                 const fetchEducation = fetch('education.json').then(res => res.json());
                 const fetchExperience = fetch('experience.json').then(res => res.json());
                 const fetchPublications = fetch('publications.json').then(res => res.json());
+                const fetchAwards = fetch('awards.json').then(res => res.json()).catch(() => []);
                 const fetchProjects = fetch('projects.json').then(res => res.json());
 
-                Promise.all([fetchConfig, fetchAbout, fetchNews, fetchResearch, fetchEducation, fetchExperience, fetchPublications, fetchProjects])
-                    .then(([configData, aboutData, newsData, researchData, educationData, experienceData, publicationsData, projectsData]) => {
+                Promise.all([fetchConfig, fetchAbout, fetchNews, fetchResearch, fetchEducation, fetchExperience, fetchPublications, fetchAwards, fetchProjects])
+                    .then(([configData, aboutData, newsData, researchData, educationData, experienceData, publicationsData, awardsData, projectsData]) => {
                         
                         const config = { ...defaultConfig, ...configData, fontSizes: { ...defaultConfig.fontSizes, ...(configData.fontSizes || {}) } };
                         
-                        const sections = document.querySelectorAll('#news, #research, #education, #experience, #publications, #projects, #contact');
+                        const sections = document.querySelectorAll('#news, #research, #education, #experience, #publications, #awards, #projects, #contact');
                         sections.forEach(section => {
                             section.style.paddingTop = config.sectionSpacingY;
                             section.style.paddingBottom = config.sectionSpacingY;
@@ -359,7 +526,8 @@
                         if (config.aboutBackgroundImage) {
                             aboutSection.style.backgroundImage = `url('${config.aboutBackgroundImage}')`;
                         } else {
-                            aboutSection.style.background = 'linear-gradient(to bottom, #ffffff, #f9fafb)';
+                            // Class-based (not inline) so the gradient can follow the light/dark theme
+                            aboutSection.classList.add('about-plain');
                             aboutSection.classList.remove('blended-background'); // Remove image-specific blending if no image
                         }
 
@@ -386,6 +554,22 @@
                         document.getElementById('about-cv').href = aboutData.cv_link;
                         document.getElementById('nav-resume-link').href = aboutData.cv_link;
                         document.getElementById('mobile-nav-resume-link').href = aboutData.cv_link;
+
+                        // Availability callout — only rendered when about.json defines one
+                        const availability = aboutData.availability;
+                        if (availability && availability.text) {
+                            const reachOut = availability.email
+                                ? ` Reach out at <a href="mailto:${availability.email}" class="font-medium text-emerald-700 hover:underline">${availability.email}</a>.`
+                                : '';
+                            document.getElementById('about-availability').innerHTML = `
+                                <div class="availability-card mt-4 flex items-start gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50/70 px-3.5 py-2.5 text-left">
+                                    <span class="relative flex h-2 w-2 mt-1.5 flex-shrink-0">
+                                        <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                                        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                                    </span>
+                                    <p class="text-sm text-gray-700 leading-snug">${availability.text}${reachOut}</p>
+                                </div>`;
+                        }
 
                         document.getElementById('about-skills').innerHTML = aboutData.skills.map(skill => `<span class="${skill.colors} text-sm font-medium px-4 py-1.5 rounded-full">${skill.name}</span>`).join('');
 
@@ -445,10 +629,10 @@
                         };
 
                         const highlightNews = (text) => text
-                            .replace(/ACL 2026/g, '<span style="color:#c0152a;background:#fff0f0;font-weight:600;padding:1px 7px;border-radius:6px;">ACL 2026</span>')
-                            .replace(/NeurIPS 2025/g, '<span style="color:#6d28d9;background:#f5f0ff;font-weight:600;padding:1px 7px;border-radius:6px;">NeurIPS 2025</span>')
+                            .replace(/ACL 2026/g, '<span class="hl hl-acl">ACL 2026</span>')
+                            .replace(/NeurIPS 2025/g, '<span class="hl hl-neurips">NeurIPS 2025</span>')
                             .replace(/Microsoft/g, '<span style="display:inline-flex;align-items:center;gap:5px;font-weight:600;vertical-align:middle;"><svg width="13" height="13" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="10" height="10" fill="#f25022"/><rect x="11" y="0" width="10" height="10" fill="#7fba00"/><rect x="0" y="11" width="10" height="10" fill="#00a4ef"/><rect x="11" y="11" width="10" height="10" fill="#ffb900"/></svg>Microsoft</span>')
-                            .replace(/The Ohio State University/g, '<span style="color:#ba0c2f;background:#fff0f2;font-weight:600;padding:1px 7px;border-radius:6px;">The Ohio State University</span>');
+                            .replace(/The Ohio State University/g, '<span class="hl hl-osu">The Ohio State University</span>');
 
                         document.getElementById('news-container').innerHTML = newsData.map((item, index) => `
                             <div class="grid grid-cols-[auto_min-content_1fr] items-baseline gap-x-6">
@@ -473,41 +657,41 @@
                         `).join('');
 
                         document.getElementById('education-container').innerHTML = educationData.map(edu => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow flex flex-col">
-                                <div class="flex justify-between items-start mb-3">
-                                    <img src="${edu.logo}" alt="${edu.institution} Logo" class="w-12 h-12 rounded-lg">
-                                    <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Education</span>
-                                </div>
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-900">${edu.degree}</h3>
-                                    <p class="text-blue-600 font-medium mt-1">${edu.institution}</p>
-                                    <div class="flex flex-wrap text-sm text-gray-500 mt-2 gap-x-4 gap-y-1">
-                                        <div class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i><span>${edu.period}</span></div>
-                                        <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i><span>${edu.location}</span></div>
+                            <div class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm card-glow flex items-center gap-3">
+                                <img src="${edu.logo}" alt="${edu.institution} Logo" class="w-16 self-stretch object-contain rounded-lg flex-shrink-0">
+                                <div class="flex-grow min-w-0 flex items-start justify-between gap-x-4">
+                                    <div class="min-w-0">
+                                        <h3 class="text-base font-bold text-gray-900">${edu.degree}</h3>
+                                        <p class="text-blue-600 font-medium text-sm">${edu.institution}</p>
+                                        <div class="flex flex-wrap gap-1.5 mt-1.5">${edu.courses.map(course => `<span class="${edu.course_colors} text-xs font-medium px-2 py-0.5 rounded-full">${course}</span>`).join('')}</div>
                                     </div>
-                                    <ul class="mt-4 space-y-2 text-gray-600 list-disc list-inside text-sm">${edu.details.map(detail => `<li>${detail}</li>`).join('')}</ul>
-                                </div>
-                                <div class="mt-auto pt-4">
-                                    <p class="text-xs font-semibold text-gray-500 uppercase mt-3 mb-1">Key Courses</p>
-                                    <div class="flex flex-wrap gap-2">${edu.courses.map(course => `<span class="${edu.course_colors} text-xs font-medium px-2.5 py-1 rounded-full">${course}</span>`).join('')}</div>
+                                    <div class="flex flex-col items-end text-xs text-gray-500 gap-y-0.5 flex-shrink-0">
+                                        <div class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i><span>${edu.period}</span></div>
+                                        <div class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>${edu.location}</span></div>
+                                    </div>
                                 </div>
                             </div>`).join('');
 
                         document.getElementById('experience-container').innerHTML = experienceData.map(exp => `
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow">
-                                <div class="flex justify-between items-start mb-3">
-                                    <img src="${exp.logo}" alt="${exp.company} Logo" class="w-12 h-12 rounded-lg">
-                                    <span class="text-xs font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Work</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-900">${exp.title}</h3>
-                                <p class="text-blue-600 font-medium mt-1">${exp.company}</p>
-                                <div class="flex flex-wrap text-sm text-gray-500 mt-2 gap-x-4 gap-y-1">
-                                    <div class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i><span>${exp.period}</span></div>
-                                    <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i><span>${exp.location}</span></div>
-                                </div>
-                                <ul class="mt-4 space-y-2 text-gray-600 list-disc list-inside text-sm">${exp.details.map(detail => `<li>${detail}</li>`).join('')}</ul>
-                                <div class="flex flex-wrap gap-2 mt-4">${exp.skills.map(skill => `<span class="bg-gray-200 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">${skill}</span>`).join('')}</div>
-                            </div>`).join('');
+                            <details class="group bg-white p-3 rounded-xl border border-gray-200 shadow-sm card-glow">
+                                <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden flex items-center gap-3">
+                                    <img src="${exp.logo}" alt="${exp.company} Logo" class="w-16 self-stretch object-contain rounded-lg flex-shrink-0">
+                                    <div class="flex-grow min-w-0 flex items-start justify-between gap-x-4">
+                                        <div class="min-w-0">
+                                            <h3 class="text-base font-bold text-gray-900">${exp.title}</h3>
+                                            <p class="text-blue-600 font-medium text-sm">${exp.company}</p>
+                                            ${exp.summary ? `<p class="text-xs text-gray-600 leading-snug mt-0.5">${exp.summary}</p>` : ''}
+                                            <div class="flex flex-wrap gap-1.5 mt-1.5">${exp.skills.map(skill => `<span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-0.5 rounded-full">${skill}</span>`).join('')}</div>
+                                        </div>
+                                        <div class="flex flex-col items-end text-xs text-gray-500 gap-y-0.5 flex-shrink-0">
+                                            <div class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i><span>${exp.period}</span></div>
+                                            <div class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span>${exp.location}</span></div>
+                                        </div>
+                                    </div>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 flex-shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <ul class="mt-2 pl-[4.75rem] space-y-1 text-gray-600 list-disc list-outside text-xs marker:text-gray-400">${exp.details.map(detail => `<li>${detail}</li>`).join('')}</ul>
+                            </details>`).join('');
 
                         document.getElementById('publications-container').innerHTML = publicationsData.map((pub, index) => `
                             <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm card-glow">
@@ -540,6 +724,29 @@
                                     <p class="text-gray-700 leading-relaxed" style="font-size: ${config.fontSizes.abstractBody};">${pub.description}</p>
                                 </div>
                             </div>`).join('');
+
+                        // Render Honors & Awards
+                        const awardTiers = {
+                            gold:     { icon: 'trophy', accent: 'bg-amber-400',  ring: 'bg-amber-100 text-amber-600',   chip: 'bg-amber-100 text-amber-800' },
+                            silver:   { icon: 'medal',  accent: 'bg-slate-400',  ring: 'bg-slate-100 text-slate-600',   chip: 'bg-slate-100 text-slate-700' },
+                            bronze:   { icon: 'medal',  accent: 'bg-orange-400', ring: 'bg-orange-100 text-orange-600', chip: 'bg-orange-100 text-orange-800' },
+                            finalist: { icon: 'award',  accent: 'bg-blue-400',   ring: 'bg-blue-100 text-blue-600',     chip: 'bg-blue-100 text-blue-800' }
+                        };
+                        document.getElementById('awards-container').innerHTML = awardsData.map(award => {
+                            const tier = awardTiers[award.tier] || awardTiers.finalist;
+                            return `
+                            <div class="relative bg-white/80 backdrop-blur-sm p-3 pl-4 rounded-xl border border-gray-200 shadow-sm card-glow flex items-center gap-3 overflow-hidden">
+                                <div class="absolute left-0 top-0 h-full w-1 ${tier.accent}"></div>
+                                <div class="w-9 h-9 rounded-full ${tier.ring} flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="${tier.icon}" class="w-4 h-4"></i>
+                                </div>
+                                <div class="flex-grow min-w-0">
+                                    <h3 class="text-sm font-bold text-gray-900 leading-snug">${award.name}</h3>
+                                    <p class="text-xs text-gray-500 leading-snug"><span class="font-medium text-gray-700">${award.rank}</span> &middot; ${award.issuer}</p>
+                                </div>
+                                <span class="text-xs font-semibold ${tier.chip} px-2 py-0.5 rounded-full flex-shrink-0">${award.year}</span>
+                            </div>`;
+                        }).join('');
 
                         // Render Projects
                         document.getElementById('projects-container').innerHTML = projectsData.map(proj => `
